@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FocalTrace setup</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body><div class="shell"><header><a class="brand" href="/">◈ FocalTrace</a><div class="badge offline"><span></span> DATABASE OFFLINE</div></header><section class="hero"><div class="eyebrow">SETUP REQUIRED</div><h1>Connect the<br><em>graph first.</em></h1><p>FocalTrace depends on FalkorDB for all asset relationships and attack-path queries. Start the database, then seed the synthetic graph.</p><div class="panel"><h3>Connection error</h3><pre>{{ error }}</pre></div><h2>Quick start</h2><pre>docker compose up -d
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
+pip install -r requirements.txt
+python -c "from app import initialize_graph; initialize_graph()"
+python app.py</pre></section></div></body></html>

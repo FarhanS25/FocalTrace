@@ -1,0 +1,12 @@
+services:
+  falkordb:
+    image: falkordb/falkordb:latest
+    container_name: focaltrace-falkordb
+    ports:
+      - "6379:6379"
+      - "3000:3000"
+    volumes:
+      - focaltrace-data:/var/lib/falkordb
+    restart: unless-stopped
+volumes:
+  focaltrace-data:
